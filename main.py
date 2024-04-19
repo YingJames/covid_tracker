@@ -1,5 +1,6 @@
 import requests
 import time
+from datetime import date
 from bs4 import BeautifulSoup
 
 # URL of the website containing the table
@@ -42,6 +43,7 @@ for row in table.find_all("tr"):
         total_tests = cells[12].text.strip()
         tests_per_million = cells[13].text.strip()
         population = cells[14].text.strip()
+        date = date.today()
 
         # Print or process the extracted data as needed
         # if country != "Total:":
